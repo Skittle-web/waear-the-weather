@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wear the weather</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Что надеть по погоде?</h1>
+        <div id="question-container">
+            <p id="question"></p>
+            <input type="number" id="answer" placeholder="Ваш ответ" min="0">
+            <button id="next-button">Далее</button>
+        </div>
+        <div id="result-container" class="hidden">
+            <h2>Рекомендации по одежде:</h2>
+            <ul id="clothing-list"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
