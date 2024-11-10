@@ -15,6 +15,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
 }
 
 .hidden {
@@ -30,6 +32,7 @@ input {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 94%;
 }
 
 button {
@@ -39,9 +42,17 @@ button {
     background-color: #007bff;
     color: white;
     cursor: pointer;
+    width: 100%;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
+@media (max-width: 600px) {
+    h1, h2 {
+        font-size: 1.5em;
+    }
+}
+
+    
