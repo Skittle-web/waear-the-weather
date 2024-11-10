@@ -8,6 +8,7 @@ body {
     height: 100vh;
     margin: 0;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .container {
