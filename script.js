@@ -13,7 +13,7 @@ let currentQuestion = 0;
 document.getElementById("question").innerText = questions[currentQuestion];
 
 document.getElementById("next-button").addEventListener("click", () => {
-    const answer = parseInt(document.getElementById("answer").value);
+    const answer = parseInt(document.getElementById("answer").value) || 0; // Обработка -0 как 0
     document.getElementById("answer").value = '';
 
     if (currentQuestion === 0) {
@@ -44,10 +44,10 @@ function displayRecommendations() {
         clothingList.innerHTML += "<li>Теплая зимняя куртка</li>";
         clothingList.innerHTML += "<li>Теплые перчатки</li>";
         clothingList.innerHTML += "<li>Шарф</li>";
-        clothingList.innerHTML += "<li>Теплые брюки</li>";
+        clothingList.innerHTML += "<li>Теплые брюки или тёплые непродуваемые штаны</li>";
         clothingList.innerHTML += "<li>Шапка</li>";
     } else if (temperature >= 0 && temperature < 10) {
-        clothingList.innerHTML += "<li>Демисезонная куртка</li>";
+        clothingList.innerHTML += "<li>Тёплая куртка</li>";
         clothingList.innerHTML += "<li>Теплые перчатки</li>";
         clothingList.innerHTML += "<li>Шарф</li>";
         clothingList.innerHTML += "<li>Джинсы или теплые брюки</li>";
@@ -67,7 +67,7 @@ function displayRecommendations() {
     if (precipitation > 0) {
         clothingList.innerHTML += "<li>Зонтик</li>";
         if (precipitation === 2) {
-            clothingList.innerHTML += "<li>Лучше водонепроницаемая куртка</li>";
+            clothingList.innerHTML += "<li>Дождевик</li>";
         }
     }
 
