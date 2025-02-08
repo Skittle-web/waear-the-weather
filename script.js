@@ -13,7 +13,26 @@ let currentQuestion = 0;
 document.getElementById("question").innerText = questions[currentQuestion];
 
 document.getElementById("next-button").addEventListener("click", () => {
-    const answer = parseInt(document.getElementById("answer").value) || 0; // Обработка -0 как 0
+    const answer = parseInt(document.getElementById("answer").value);
+
+    // Проверка на пустое поле ввода
+    if (isNaN(answer)) {
+        alert("Пожалуйста, введите число.");
+        return;
+    }
+
+    // Проверка на корректность ввода для каждого вопроса
+    if (currentQuestion === 0 && (answer < -50 || answer > 50)) {
+        alert("Пожалуйста, введите корректную температуру (от -50 до 50 градусов).");
+        return;
+    } else if (currentQuestion === 1 && (answer < 0 || answer > 2)) {
+        alert("Пожалуйста, введите корректный уровень осадков (0, 1 или 2).");
+        return;
+    } else if (currentQuestion === 2 && (answer < 0 || answer > 100)) {
+        alert("Пожалуйста, введите корректную скорость ветра (от 0 до 100 м/с).");
+        return;
+    }
+
     document.getElementById("answer").value = '';
 
     if (currentQuestion === 0) {
@@ -77,4 +96,3 @@ function displayRecommendations() {
 
     document.getElementById("result-container").classList.remove("hidden");
 }
-
